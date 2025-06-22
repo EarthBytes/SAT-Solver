@@ -1,5 +1,3 @@
-# Question 6:
-
 import os
 os.chdir(os.path.dirname(__file__))
 
@@ -16,8 +14,6 @@ def load_dimacs(filename):
     return clauses
 clauses = load_dimacs("sat.txt")
 print(clauses)
-
-# Question 7:
 
 import itertools
 def simple_sat_solve(clauses):
@@ -36,9 +32,7 @@ clauses = [[1, -2], [-1, 3]]
 result = simple_sat_solve(clauses)
 print(result)
 
- # Question 8:
-
-def branching_sat_solve(clauses, partial_assignment):
+ def branching_sat_solve(clauses, partial_assignment):
     if all(is_clause_satisfied(clause, partial_assignment) for
 clause in clauses):
         return partial_assignment
@@ -71,8 +65,6 @@ if solution:
 else:
     print("No valid assignment exists")
 
- # Question 9:
-
 def unit_propagate(clauses):
     while True:
         unit_clauses = [clause for clause in clauses if sum(1
@@ -97,8 +89,6 @@ def apply_unit_propagation(clauses, literal):
 clause_set = [[1, -2], [-1, 2, 3], [-3, 2]]
 updated_clauses = unit_propagate(clause_set)
 print("Clause set after unit propagation:", updated_clauses)
-
-# Question 10:
 
 def dpll_sat_solve(clauses, partial_assignment, all_vars):
     clauses = unit_propagate(clauses)
@@ -175,8 +165,8 @@ if solution:
 else:
     print("No satisfying assignment found")
 
-
 # Tests:
+
 def test():
     print("Conducting Tests")
     
